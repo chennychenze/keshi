@@ -1,16 +1,5 @@
-import "@/styles/globals.css";
-import "@/styles/globals.css";
-import { Nunito } from "next/font/google";
-
-const nunito = Nunito({
-  weight: "300",
-  subsets: ["latin"],
-});
+import '@/styles/globals.css'
 
 export default function App({ Component, pageProps }) {
-  return (
-    <main className={nunito.className}>
-      <Component {...pageProps} />
-    </main>
-  );
+  return <Component {...pageProps} />
 }
