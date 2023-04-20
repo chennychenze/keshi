@@ -1,0 +1,23 @@
+@use "./mixins.scss";
+
+.heroContainer {
+  text-align: center;
+  //padding-bottom: 1rem;
+}
+
+.hero {
+  @include mixins.breakpoint(tablet) {
+    width: 280px;
+    height: 200px;
+  }
+
+  @include mixins.breakpoint(laptop) {
+    width: 315px;
+    height: 225px;
+  }
+
+  @include mixins.breakpoint(desktop) {
+    width: 350px;
+    height: 250px;
+  }
+}
