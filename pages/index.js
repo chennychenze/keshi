@@ -7,7 +7,6 @@ import Heading from "@/components/Heading";
 import Hero from "@/components/Hero";
 import Logo from "@/components/Logo";
 import Section from "@/components/Section";
-import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
 import { getKeshiBio, getAlbumData } from "@/lib/api";
 

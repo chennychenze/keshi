@@ -7,8 +7,8 @@ const Album = ({ name, imageUrl }) => {
       <Image
         src={imageUrl}
         alt={`${name} album cover`}
-        width={250}
-        height={250}
+        width={200}
+        height={200}
       />
       <div className={styles.name}>{name}</div>
     </div>
