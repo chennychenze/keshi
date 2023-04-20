@@ -1,0 +1,40 @@
+@mixin breakpoint($value) {
+  @if type-of($value) == "string" {
+    @if ($value== "xs" or $value== "phone") {
+      @media (max-width: 480px) {
+        @content;
+      }
+    } @else if ($value== "sm" or $value== "tablet") {
+      @media (min-width: 768px) {
+        @content;
+      }
+    } @else if ($value== "md" or $value== "laptop") {
+      @media (min-width: 1024px) {
+        @content;
+      }
+    } @else if($value== "lg" or $value== "desktop") {
+      @media (min-width: 1200px) {
+        @content;
+      }
+    } @else {
+      @warn "Breakpoint mixin supports: xs or phone, sm or tablet, md or laptop, lg or desktop as string variables";
+    }
+  }
+
+  // if value then use value as minimum width.
+  @else if is-length($value) {
+    @media (min-width: #{$value}) {
+      @content;
+    }
+  } @else {
+    @warn "Breakpoint mixin supports: string variables or relative units";
+  }
+}
+
+@mixin marginBottom() {
+  @for $i from 1 through 12 {
+    &.margin-bottom-#{$i} {
+      margin-bottom: $i + rem;
+    }
+  }
+}
