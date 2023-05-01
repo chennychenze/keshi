@@ -2,6 +2,7 @@ import "@/styles/globals.css";
 import "@/styles/globals.css";
 import { Nunito } from "next/font/google";
 
+// Global font
 const nunito = Nunito({
   weight: "300",
   subsets: ["latin"],

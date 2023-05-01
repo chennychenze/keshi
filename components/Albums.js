@@ -3,6 +3,7 @@ import Grid from "./Grid";
 import Link from "next/link";
 import Card from "./Card";
 
+// Albums in the homepage
 const Albums = ({ albums }) => {
   return (
     <Grid>

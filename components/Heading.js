@@ -1,9 +1,12 @@
 import classNames from "classnames/bind";
 import styles from "../styles/heading.module.scss";
 
+// Create a new instance of the classNames function bound to the styles imported above
 let cx = classNames.bind(styles);
 
+// Define the Heading component function that accepts props
 const Heading = ({ children, level, marginBottom }) => {
+  // Generate the CSS classes for the component based on the props passed
   let headingClasses = cx({
     heading: true,
     [`margin-bottom-${marginBottom}`]: marginBottom,
@@ -14,6 +17,7 @@ const Heading = ({ children, level, marginBottom }) => {
     // heading5: level === "5",
   });
 
+  // Depending on the level prop passed, render a different heading element with the generated CSS classes
   if (level === "1") {
     return <h1 className={headingClasses}>{children}</h1>;
   } else if (level === "2") {
@@ -23,6 +27,7 @@ const Heading = ({ children, level, marginBottom }) => {
   } else if (level === "4") {
     return <h4 className={headingClasses}>{children}</h4>;
   } else {
+    // If no valid level prop is passed, render a paragraph element with an error message
     return <p>The heading component requires the level prop</p>;
   }
 };
