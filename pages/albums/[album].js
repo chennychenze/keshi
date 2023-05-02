@@ -4,6 +4,7 @@ import { getAlbumData } from "@/lib/api";
 import Album from "@/components/SingleAlbum";
 import Card from "@/components/Card";
 import Logo from "@/components/Logo";
+import Tracks from "@/components/Tracks";
 
 export async function getStaticPaths() {
   const albums = await getAlbumData();
@@ -24,13 +25,14 @@ export async function getStaticProps({ params }) {
 }
 
 const SingleAlbumPage = ({ album }) => {
-  const { name, image } = album;
+  const { name, image, tracks } = album;
 
   return (
     <>
       <Container>
         <Logo />
         <Album key={name} name={name} imageUrl={image} />
+        <Tracks tracks={tracks} />
       </Container>
     </>
   );
