@@ -1,4 +1,4 @@
-keshi: albums-tracks-lyrics is a user-friendly web app offering a captivating exploration of artist keshi's world, enabling seamless interaction with his biography, top albums, and track lyrics.
+**keshi: albums-tracks-lyrics** is a user-friendly web app offering a captivating exploration of artist keshi's world, enabling seamless interaction with his biography, top albums, and track lyrics.
 
 - Built using Next.js, leveraging features like ```getStaticProps``` and ```getStaticPaths``` for efficient data fetching and dynamic routing.
 - Utilized Next.js Link component for smooth client-side navigation between pages.
