@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import styles from "../styles/tracks.module.scss";
 
 // Tracks in each album page
@@ -9,7 +10,7 @@ const Tracks = ({ tracks }) => {
         {tracks.map((track, index) => {
           return (
             <li key={index} className={styles.track}>
-              {track}
+              <Link href={`/tracks/${encodeURIComponent(track)}`}>{track}</Link>
             </li>
           );
         })}

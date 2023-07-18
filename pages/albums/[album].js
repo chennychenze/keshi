@@ -2,7 +2,6 @@ import React from "react";
 import Container from "@/components/Container";
 import { getAlbumData } from "@/lib/api";
 import Album from "@/components/SingleAlbum";
-import Card from "@/components/Card";
 import Logo from "@/components/Logo";
 import Tracks from "@/components/Tracks";
 
@@ -11,10 +10,12 @@ export async function getStaticPaths() {
   const paths = albums.map((album) => ({
     params: { album: album.name },
   }));
+  console.log("Generated paths:", paths);
   return { paths, fallback: false };
 }
 
 export async function getStaticProps({ params }) {
+  console.log("params:", params);
   const albums = await getAlbumData();
   const album = albums.find((album) => album.name === params.album);
   return {
@@ -32,7 +33,7 @@ const SingleAlbumPage = ({ album }) => {
       <Container>
         <Logo />
         <Album key={name} name={name} imageUrl={image} />
-        <Tracks tracks={tracks} />
+        <Tracks albumName={name} tracks={tracks} />
       </Container>
     </>
   );

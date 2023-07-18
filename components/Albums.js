@@ -13,7 +13,10 @@ const Albums = ({ albums }) => {
           return null;
         }
         return (
-          <Link href={`/albums/${album.name}`} key={album.name}>
+          <Link
+            href={`/albums/${encodeURIComponent(album.name)}`}
+            key={album.name}
+          >
             <Card key={album.name} name={album.name} imageUrl={album.image} />
           </Link>
         );
